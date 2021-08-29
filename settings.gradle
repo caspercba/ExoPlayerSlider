@@ -1,0 +1,3 @@
+rootProject.name = "ExoPlayerVerticalSlider"
+include ':app'
+include ':repo'

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
 import com.gaspardeelias.exoplayerverticalslider.databinding.ActivityMainBinding
 import com.gaspardeelias.exoplayerverticalslider.ui.pager.VideoListingFragment
+import com.gaspardeelias.exoplayerverticalslider.ui.profile.ProfileFragment
 
 class MainActivity : FragmentActivity() {
 
@@ -17,7 +18,24 @@ class MainActivity : FragmentActivity() {
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, VideoListingFragment())
-            .addToBackStack(null)
             .commit()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setupViews()
+    }
+
+    fun setupViews() {
+        binding.home.setOnClickListener {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, VideoListingFragment())
+                .commit()
+        }
+        binding.profile.setOnClickListener {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, ProfileFragment())
+                .commit()
+        }
     }
 }

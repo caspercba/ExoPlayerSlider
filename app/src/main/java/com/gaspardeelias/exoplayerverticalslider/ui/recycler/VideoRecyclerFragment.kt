@@ -7,12 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.SnapHelper
 import com.gaspardeelias.exoplayerverticalslider.MainApplication
 import com.gaspardeelias.exoplayerverticalslider.databinding.FragmentVideoRecyclerBinding
 import com.gaspardeelias.exoplayerverticalslider.ui.VideoListingViewModel
-import com.gaspardeelias.repo.VideoRepository
+import com.gaspardeelias.repo.Repository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
@@ -25,7 +24,7 @@ class VideoRecyclerFragment : Fragment() {
 
     lateinit var binding: FragmentVideoRecyclerBinding
     lateinit var videoAdapter: VideoRecyclerAdapter
-    lateinit var repo: VideoRepository
+    lateinit var repo: Repository
     val eventBus = CustomEventBus()
 
     init {

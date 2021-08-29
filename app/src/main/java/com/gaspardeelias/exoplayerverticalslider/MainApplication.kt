@@ -3,13 +3,12 @@ package com.gaspardeelias.exoplayerverticalslider
 import android.app.Application
 import com.gaspardeelias.exoplayerverticalslider.ui.pager.PlayerProvider
 import com.gaspardeelias.exoplayerverticalslider.utils.SSLUtils
-import com.gaspardeelias.repo.VideoRepository
-import com.gaspardeelias.repo.VideoRepositoryImpl
-import com.google.android.exoplayer2.Player
+import com.gaspardeelias.repo.Repository
+import com.gaspardeelias.repo.RepositoryImpl
 
 class MainApplication: Application() {
 
-    private var repository: VideoRepository? = null
+    private var repository: Repository? = null
     private var playerProvider: PlayerProvider? = null
 
     override fun onCreate() {
@@ -17,8 +16,8 @@ class MainApplication: Application() {
         SSLUtils.installCerts()
     }
 
-    fun getRepository(): VideoRepository {
-        if(repository == null) repository = VideoRepositoryImpl(this)
+    fun getRepository(): Repository {
+        if(repository == null) repository = RepositoryImpl(this)
         return repository!!
     }
 

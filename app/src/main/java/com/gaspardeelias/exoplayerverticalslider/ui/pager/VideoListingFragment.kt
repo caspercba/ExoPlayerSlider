@@ -10,7 +10,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.gaspardeelias.exoplayerverticalslider.MainApplication
 import com.gaspardeelias.exoplayerverticalslider.databinding.FragmentVideoListingBinding
 import com.gaspardeelias.exoplayerverticalslider.ui.VideoListingViewModel
-import com.gaspardeelias.repo.VideoRepository
+import com.gaspardeelias.repo.Repository
 
 class VideoListingFragment : Fragment() {
 
@@ -22,7 +22,7 @@ class VideoListingFragment : Fragment() {
 
     private lateinit var binding: FragmentVideoListingBinding
     private lateinit var adapter: VideoFragmentStateAdapter
-    private lateinit var repo: VideoRepository
+    private lateinit var repo: Repository
 
     override fun onCreateView(
         inflater: LayoutInflater,

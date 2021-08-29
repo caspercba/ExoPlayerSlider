@@ -8,16 +8,7 @@ import java.io.IOException
 
 class FileDataSource(val context: Context) {
 
-    suspend fun getVideoList(): List<Video> {
-        val jsonString = loadFileFromAssets(context, FILE_SOURCE)
-        if(jsonString != null) {
-            return Gson().fromJson(jsonString, VideoList::class.java)
-        } else {
-            return arrayListOf()
-        }
-    }
-
-    private fun loadFileFromAssets(context: Context, filename: String): String? {
+    suspend fun loadFileFromAssets(filename: String): String? {
         var json: String? = null
         try {
             val inputS = context.assets.open(filename)
@@ -31,9 +22,5 @@ class FileDataSource(val context: Context) {
             return null
         }
         return json
-    }
-
-    companion object {
-        private const val FILE_SOURCE = "videos.json"
     }
 }

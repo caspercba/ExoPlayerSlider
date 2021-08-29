@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">ExoPlayerVerticalSlider</string>
+    <string name="user_test">User Test</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="bio_desc">No bio yet</string>
+    <string name="following">Following</string>
+    <string name="fans">Fans</string>
+    <string name="hearts">Hearts</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+
 </resources>

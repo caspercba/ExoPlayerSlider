@@ -4,13 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.gaspardeelias.repo.VideoRepository
+import com.gaspardeelias.repo.Repository
 import com.gaspardeelias.repo.model.Video
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class VideoListingViewModel(val repo: VideoRepository) : ViewModel() {
+class VideoListingViewModel(val repo: Repository) : ViewModel() {
     private val _data = MutableLiveData<List<Video>>()
 
     val data: LiveData<List<Video>>
@@ -26,7 +26,7 @@ class VideoListingViewModel(val repo: VideoRepository) : ViewModel() {
         }
     }
 
-    class ViewModelFactory(val repo: VideoRepository): ViewModelProvider.Factory {
+    class ViewModelFactory(val repo: Repository): ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
             return VideoListingViewModel(repo) as T
         }

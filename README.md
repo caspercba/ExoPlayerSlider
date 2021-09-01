@@ -1,12 +1,12 @@
 # ExoPlayerSlider
 
-This project is a small demo for exoplayer shown in a vertical viewpager.
+This project is a small demo for exoplayer shown in a vertical viewpager. 
 
 Challenges:
 Reusing a single player to avoid memory issues, effectively creating efficient code, able to show many video items with minimal memory footprint.
 
 Tests:
-No time to write tests. Sorry
+At some point Ill add some tests.
 
 Structure:
 2 main layers: Repository (lower) + ui (uppper)
